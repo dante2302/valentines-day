@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    img{
+        border-radius: 8px;
+        margin: 0 auto;
+        max-height: 200px;
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+    }
+    body{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background: linear-gradient(315deg, #f2f0ef 0%, #fbceb1 74%);
+        height: 100vh;
+        margin: 0;
+        justify-content: center;
+    }
+    body, .container, .buttons, .text-container{
+        display: flex;
+    }
+    .buttons{
+        position: relative;
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+    }
+    .hearts-container{
+        padding-top: 200px;
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        transition: opacity 0.7s ease-in-out;
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        margin-top: 16px;
+    }
+    .container, .text-container{
+        flex-direction: column;
+    }
+    .text-container{
+        padding-inline: 20px;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            background: rgb(4, 168, 4);
+          }
+
+         .btn-red-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            background: rgb(212, 0, 0);
+          }
+
+          .btn-red-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+          .btn{
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 0;
+            cursor: pointer;
+          }
+
+          .btn:focus,
+          .btn:focus-visible,
+          .btn:focus-within{
+            outline: 0;
+            box-shadow: none;
+          }
+         
+          :root {
+  --color-main: #403149;
+  --color-heart: red;
+  --size-viewport: 85%;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hearts {
+  width: 100%;
+  min-width: 100px;
+  height: 25%;
+  min-height: 70vh;
+  z-index: 10;
+}
+
+.heart {
+  background-color: var(--color-heart);
+  position: absolute;
+  height: 10%;
+  min-height: 15px;
+  width: 10%;
+  min-width: 15px;
+  opacity: 0;
+  -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>');
+          mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>');
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: bottom;
+          mask-position: bottom;
+  animation: floating-heart 4s infinite cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+
+@keyframes floating-heart {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  10% {
+    opacity: 1;
+    bottom: 20%;
+  }
+  20% {
+    bottom: 40%;
+  }
+  30% {
+    bottom: 60%;
+  }
+  40% {
+    opacity: 1;
+    bottom: 80%;
+  }
+  48% {
+    opacity: 0;
+    bottom: 100%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 100%;
+  }
+}
+</style>
+<body>
+    <div class="container">
+        <img src="./main.jpeg" alt="gif" class="gif" data-start data-idx="0" data-text="Ще ми бъдеш ли валентинка???">
+        <img src="sad_2.jpg" class="initial-hidden" data-idx="1" data-text="Наистина ли?">
+        <img src="sad.jpg" class="initial-hidden" data-idx="2" data-text="Mоля?:(">
+        <img src="./semifinal.png" class="initial-hidden semifinal-image" alt="gif" data-idx="2" data-text="Ако щеш">
+        <img src="./final.gif" class="initial-hidden final-image" data-final data-idx="3" data-text="ЧЕСТИТО!">
+        <div class="hearts-container">
+          <div id="hearts-alpaca" class="hearts">
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+        </div>
+        </div> 
+        <div class="container-final">
+        <div class="text-container">
+            <h1>Ще ми бъдеш ли валентинка???</h1> 
+            <div class="buttons">
+                <button class="yes-button btn-grad btn">Да</button>
+                <button class="no-button btn btn-red-grad">Не</button>
+            </div>
+        </div>
+        </div>
+  </div>
+
+    </div>
+    <script>
+        const yesButton = document.querySelector('.yes-button');
+        const noButton = document.querySelector('.no-button');
+        const buttonsContainer = document.querySelector('.buttons');
+        const hearts = document.querySelectorAll('.heart');
+        const heartsContainer = document.querySelector('.hearts-container');
+        const h1 = document.querySelector('h1');
+        const bias = 10;
+        const animation = "floating-heart 4s infinite cubic-bezier(0.5, 0.5, 0.5, 0.5)";
+        const initialHidden = document.querySelectorAll('.initial-hidden');
+        const images = [...document.querySelectorAll('img')].sort((a, b) => a.dataset.idx - b.dataset.idx);
+        let currentIndex = 0;
+        const startImage = images.find(item => item.dataset.start);
+        const finalImage = images.find(item => item.dataset.final);
+
+        initialHidden.forEach(item => {
+            item.style.display = 'none';
+        });
+
+        const containerFinal = document.querySelector('.container-final');
+        hearts.forEach((heart, index) => {
+            heart.style.animationDelay = .1 * index + 's';
+            heart.style.left = Math.random(0, 1) * 100 + '%';
+            heart.style.right = Math.random(0, 1) * 100 + '%';
+            if(index % bias == 0){
+                heart.style.left = 0;
+                heart.style.right = 0;
+            }
+        });
+        heartsContainer.style.opacity = 0;
+        noButton.addEventListener('click', () => {
+            currentIndex++;
+            images.forEach(item => {
+                item.style.display = 'none';
+            });
+            if(currentIndex == images.length - 2){
+                noButton.style.display = 'none';
+                h1.textContent = images[currentIndex].dataset.text;
+            }
+            const imageForShow = images[currentIndex];
+            noButton.textContent = images[currentIndex].dataset.text;
+            yesButton.style.fontSize = 16 + 6*(currentIndex+1) + 'px';
+            noButton.style.fontSize = 16 - 1.5*(currentIndex+1) + 'px';
+            imageForShow.style.display = 'block';
+        });
+        yesButton.addEventListener('click', () => {
+            currentIndex++;
+            heartsContainer.style.opacity = 1;
+            images.forEach(item => {
+                item.style.display = 'none';
+            });
+            images[images.length - 1].style.display = 'block';
+            h1.textContent = images[images.length - 1].dataset.text;
+            buttonsContainer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
